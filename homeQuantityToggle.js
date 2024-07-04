@@ -1,6 +1,6 @@
 export const homeQuantityToggle =(event,id,stock)=>{
+    // console.log(event.target);
     const currCardElement = document.querySelector(`#card${id}`); 
-    console.log(currCardElement);
 
     const productQuantity= currCardElement.querySelector('.productQuantity');
 

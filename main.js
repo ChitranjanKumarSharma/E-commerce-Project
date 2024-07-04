@@ -1,6 +1,5 @@
 import products from "./api/products.json";
-import { showProductContainer } from "./homeProductCards";
+import { homeProductCards } from "./homeProductCards";
 
-
-/* call the function which will take products array as input */
-showProductContainer(products);
+//* generate product cards using template and product data array. 
+homeProductCards(products);
