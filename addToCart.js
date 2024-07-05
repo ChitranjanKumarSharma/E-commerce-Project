@@ -29,7 +29,7 @@ export const addToCart = ( event, id, stock)=>{
     
     if (existingProd) {
         quantity=Number(existingProd.quantity)+(quantity);
-        console.log(quantity);
+        
         price = existingProd.price +(price);
        
         let arrUpdatedCartProduct ={id , quantity, price};
@@ -41,7 +41,6 @@ export const addToCart = ( event, id, stock)=>{
             }
         });
 
-        console.log(arrUpdatedCartProduct);
         
         localStorage.setItem("cartProductLS", JSON.stringify(arrUpdatedCartProduct));
 

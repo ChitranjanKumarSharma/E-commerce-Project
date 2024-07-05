@@ -1,6 +1,8 @@
 
 const cartValue=document.querySelector('#cartValue');
-// console.log(cartValue);
+
+/*================================ header section me cart value ko update  ==============================*/
+
 
 export const updateCartValue = (cartProducts)=>{
     
