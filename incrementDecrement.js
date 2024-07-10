@@ -1,10 +1,11 @@
 import { getCartProductFromLS } from "./getCartProductFromLS";
+import { showTotalSum } from "./showTotalSum";
 // import { products} from "./api/products.json";
 
 
 export const incrementDecrement= (event, id, stock, price)=>{
     const cardClicked= document.querySelector(`#card${id}`);
-    console.log(cardClicked);
+    
     const productQuantity= cardClicked.querySelector(".productQuantity");
     const productActualPrice= cardClicked.querySelector(".productPrice");
     let quantity= Number(productQuantity.textContent);
@@ -28,8 +29,14 @@ export const incrementDecrement= (event, id, stock, price)=>{
     let cartProducts= getCartProductFromLS();
     let existingProduct = cartProducts.find((currProd)=> currProd.id === id);
     existingProduct.quantity= quantity;
-    existingProduct.price= quantity * price;
+    let PriceUptoDecimal = quantity*price;
+    PriceUptoDecimal =   Number(PriceUptoDecimal.toFixed(2));
+    
+    existingProduct.price = PriceUptoDecimal;
     localStorage.setItem("cartProductLS", JSON.stringify(cartProducts));
     productQuantity.textContent=   quantity;
-    productActualPrice.textContent= quantity*price;
+    productActualPrice.textContent= PriceUptoDecimal;
+
+    showTotalSum();
+    
 }

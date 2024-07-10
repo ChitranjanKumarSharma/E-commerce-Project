@@ -3,6 +3,7 @@ import { fetchQuantityFromLS } from "./fetchQuantityFromLS";
 import { getCartProductFromLS } from "./getCartProductFromLS";
 import { incrementDecrement } from "./incrementDecrement";
 import { removeProductFromCart } from "./removeProductFromCart";
+import { showTotalSum } from "./showTotalSum";
 
 
 /* getting cart product local storage */ 
@@ -70,5 +71,7 @@ const addToCartProductCards= () => {
 /* calling the function to show cart products on that page */
 addToCartProductCards();
 
+
+showTotalSum();
 
 

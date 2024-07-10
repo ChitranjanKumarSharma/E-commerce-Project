@@ -1,4 +1,5 @@
 import { getCartProductFromLS } from "./getCartProductFromLS"
+import { showTotalSum } from "./showTotalSum";
 import { updateCartValue } from "./updateCartValue";
 
 export const removeProductFromCart = (id)=>{
@@ -10,6 +11,7 @@ export const removeProductFromCart = (id)=>{
     if(removeDiv) removeDiv.remove();
 
     updateCartValue(cartProducts);
+    showTotalSum();
 
 
 }
